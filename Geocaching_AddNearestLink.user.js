@@ -5,6 +5,7 @@
 // @description  Add a nearest cache link on cache page description
 // @author       Francois Crevola
 // @match        http://www.geocaching.com/geocache/GC*
+// @match        http://www.geocaching.com/seek/cache_details.aspx*
 // @grant        none
 // ==/UserScript==
 
