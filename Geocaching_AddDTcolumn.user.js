@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Geocaching - Add D/T Column
 // @namespace    http://www.crevola.org/francois/
-// @version      0.1
+// @version      0.2
 // @description  Add D/T column to recently viewed cache in profile default view
 // @author       Francois Crevola
 // @match        http://www.geocaching.com/my/default.aspx
@@ -25,6 +25,12 @@ $.each(elts, function( index, value ){
 	strValue = $(this).text();
     if (strValue.substr(0,2)=="GC") {
         var gccode = strValue;
+        var knownDT = localStorage.getItem(gccode);
+        var data = ".. / ..";
+        if (knownDT!=null) {
+            data = knownDT;
+        }
+		$(value).after('<td id="dt'+gccode+'" >'+data+'</td>');
         url = "http://coord.info/"+gccode;
         GM_xmlhttpRequest({
           method: "GET",
@@ -47,7 +53,8 @@ $.each(elts, function( index, value ){
               if (nbDT!="0") {
                   css = 'style="text-decoration: line-through"';
               }
-              $(value).after("<td "+css+">"+D+" / "+T+"</td>");
+              localStorage.setItem(gccode,D+' / '+T);
+              $("#dt"+gccode).html('<td id="dt'+gccode+'" '+css+'>'+D+' / '+T+'</td>');
           }
         });
     }
