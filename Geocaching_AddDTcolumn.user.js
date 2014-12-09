@@ -54,7 +54,7 @@ $.each(elts, function( index, value ){
                   css = 'style="text-decoration: line-through"';
               }
               localStorage.setItem(gccode,D+' / '+T);
-              $("#dt"+gccode).html('<td id="dt'+gccode+'" '+css+'>'+D+' / '+T+'</td>');
+              $("#dt"+gccode).replaceWith('<td id="dt'+gccode+'" '+css+'>'+D+' / '+T+'</td>');
           }
         });
     }
