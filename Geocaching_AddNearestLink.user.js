@@ -13,15 +13,9 @@
 var elts = $('#ctl00_ContentBody_lnkConversions');
 var url = elts[0].href;
 
-console.log(url);
-
 url = url.replace("wpt/?","seek/nearest.aspx?");
 url = url.replace("detail","f");
-
-console.log(url);
 
 url2 = url.replace("&f=1","");
 
 $('.LocationData').append('<div class="AlignRight"><a href="'+url2+'">Autres caches à proximité</a><br>(<a href="'+url+'">Non-trouvées par vous-même</a>)</div>');
-
-
