@@ -12,38 +12,31 @@
 var resultDifficultyTerrainCaches = "";
 
 GM_xmlhttpRequest({
-  method: "GET",
-  url: "http://www.geocaching.com/my/statistics.aspx",
-  onload: function(response) {
+    method: "GET",
+    url: "http://www.geocaching.com/my/statistics.aspx",
+    onload: function(response) {
 	obj = $.parseHTML(response.responseText);
-    resultDifficultyTerrainCaches = $(obj).find("#DifficultyTerrainCaches");
+        resultDifficultyTerrainCaches = $(obj).find("#DifficultyTerrainCaches");
 
-      D = $("#ctl00_ContentBody_uxLegendScale").html();
-      D = D.substring(D.indexOf("stars/stars")+11,D.indexOf(".gif"));
-      D = D.replace("_",".");
+        D = $("#ctl00_ContentBody_uxLegendScale").html();
+        D = D.substring(D.indexOf("stars/stars")+11,D.indexOf(".gif"));
+        D = D.replace("_",".");
       
-      T = $("#ctl00_ContentBody_Localize12").html();
-      T = T.substring(T.indexOf("stars/stars")+11,T.indexOf(".gif"));
-      T = T.replace("_",".");
+        T = $("#ctl00_ContentBody_Localize12").html();
+        T = T.substring(T.indexOf("stars/stars")+11,T.indexOf(".gif"));
+        T = T.replace("_",".");
       
-      var nbDT = "0";
-      console.log(nbDT);
-      if (resultDifficultyTerrainCaches!=="") {
-          nbDT = resultDifficultyTerrainCaches.find("#"+(((D-1)*2)+1)+"_"+(((T-1)*2)+1)).text();
-          console.log(nbDT);
-      }
+        var nbDT = "0";
+        if (resultDifficultyTerrainCaches!=="") {
+            nbDT = resultDifficultyTerrainCaches.find("#"+(((D-1)*2)+1)+"_"+(((T-1)*2)+1)).text();
+        }
 
-      if (nbDT != "0") {
-          console.log(nbDT);
-        $("#ctl00_ContentBody_diffTerr").append("<div>Already "+nbDT+" found with this D/T</div>");
-      } else {
-        $("#ctl00_ContentBody_diffTerr").append("<div>Go find it, it's a new D/T for you !!</div>");
-        $("#ctl00_ContentBody_uxLegendScale").attr("style","background-color: lightgreen");
-        $("#ctl00_ContentBody_Localize12").attr("style","background-color: lightgreen");
-      }
-
-  }
+        if (nbDT != "0") {
+            $("#ctl00_ContentBody_diffTerr").append("<div>Already "+nbDT+" found with this D/T</div>");
+        } else {
+            $("#ctl00_ContentBody_diffTerr").append("<div>Go find it, it's a new D/T for you !!</div>");
+            $("#ctl00_ContentBody_uxLegendScale").attr("style","background-color: lightgreen");
+            $("#ctl00_ContentBody_Localize12").attr("style","background-color: lightgreen");
+        }
+    }
 });
-
-
-
