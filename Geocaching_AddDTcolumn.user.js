@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Geocaching - Add D/T Column
 // @namespace    http://www.crevola.org/francois/
-// @version      0.2
+// @version      0.3
 // @description  Add D/T column to recently viewed cache in profile default view
 // @author       Francois Crevola
-// @match        http://www.geocaching.com/my/default.aspx
+// @match        http*://www.geocaching.com/my/default.aspx
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 

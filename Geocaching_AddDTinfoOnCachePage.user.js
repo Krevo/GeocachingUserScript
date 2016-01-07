@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Geocaching - Add D/T info on a cache page.
 // @namespace    http://www.crevola.org/francois/
-// @version      0.1
+// @version      0.2
 // @description  Tell you if the cache you are currently watching is a new D/T for your, if not tell you how many D/T like this one you have already found.
 // @author       Francois Crevola
-// @match        http://www.geocaching.com/geocache/GC*
-// @match        http://www.geocaching.com/seek/cache_details.aspx*
+// @match        http*://www.geocaching.com/geocache/GC*
+// @match        http*://www.geocaching.com/seek/cache_details.aspx*
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 

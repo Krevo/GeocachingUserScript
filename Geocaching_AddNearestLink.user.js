@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Geocaching - Add nearest cache link
-// @namespace    http://your.homepage/
-// @version      0.2
+// @namespace    http://www.crevola.org/francois/
+// @version      0.3
 // @description  Add a nearest cache link on cache page description
 // @author       Francois Crevola
-// @match        http://www.geocaching.com/geocache/GC*
+// @match        http*://www.geocaching.com/geocache/GC*
 // @grant        none
 // ==/UserScript==
 

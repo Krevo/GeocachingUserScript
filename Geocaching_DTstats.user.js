@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Geocaching Stats D/T
 // @namespace    http://www.crevola.org/francois/
-// @version      0.1
+// @version      0.2
 // @description  Add info in D/T stats block
 // @author       Francois Crevola
-// @match        http://www.geocaching.com/my/statistics.aspx
+// @match        http*://www.geocaching.com/my/statistics.aspx
 // @grant        none
 // ==/UserScript==
 
