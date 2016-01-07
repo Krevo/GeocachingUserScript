@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Geocaching - Add nearest cache link
 // @namespace    http://www.crevola.org/francois/
-// @version      0.4
+// @version      0.5
 // @description  Add a nearest cache link on cache page description
 // @author       Francois Crevola
 // @match        http*://www.geocaching.com/geocache/GC*
@@ -21,8 +21,6 @@ var elts = $('#ctl00_ContentBody_uxViewLargerMap');
 var url = elts[0].href;
 
 url = url.replace("map/default.aspx?","seek/nearest.aspx?");
-url = url.replace("detail","f");
+url2 = url + "&f=1";
 
-url2 = url.replace("&f=1","");
-
-$('.LocationData').append('<div class="AlignRight"><a href="'+url2+'">'+label1+'</a><br>(<a href="'+url+'">'+label2+'</a>)</div>');
+$('.LocationData').append('<div class="AlignRight"><a href="'+url+'">'+label1+'</a><br>(<a href="'+url2+'">'+label2+'</a>)</div>');
