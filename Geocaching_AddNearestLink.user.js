@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Geocaching - Add nearest cache link
 // @namespace    http://www.crevola.org/francois/
-// @version      0.3
+// @version      0.4
 // @description  Add a nearest cache link on cache page description
 // @author       Francois Crevola
 // @match        http*://www.geocaching.com/geocache/GC*
@@ -17,10 +17,10 @@ if (lang.substr(0,2)=="fr") {
 }
     
 // Add information about nb of D/T found
-var elts = $('#ctl00_ContentBody_lnkConversions');
+var elts = $('#ctl00_ContentBody_uxViewLargerMap');
 var url = elts[0].href;
 
-url = url.replace("wpt/?","seek/nearest.aspx?");
+url = url.replace("map/default.aspx?","seek/nearest.aspx?");
 url = url.replace("detail","f");
 
 url2 = url.replace("&f=1","");
