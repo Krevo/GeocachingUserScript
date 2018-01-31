@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Geocaching - Add nb of found(s) with the same D/TD/T on dashboard
+// @name         Geocaching - Add nb of found(s) with the same D/T on dashboard
 // @namespace    http://www.crevola.org/francois/
-// @version      0.1
+// @version      0.2
 // @description  Add number of found(s) with the same D/T found for each recently viewed cache on the (new) dashboard
 // @license      BSD-2-Clause
 // @author       Francois Crevola
